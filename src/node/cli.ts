@@ -1,5 +1,6 @@
 import cac from 'cac'
 import { createDevServer } from "./dev"; 
+import { build } from './build'
 
 const cli = cac('shaco').version('0.0.1').help()
 
@@ -11,7 +12,8 @@ cli.command('dev [root]', 'start dev server').action(async(root:string) => {
 })
 
 cli.command('build [root]', 'build in prod').action(async(root:string) => {
-  console.log('build', root)
+  // console.log('build', root)
+  await build(root)
 })
 
 cli.parse()
