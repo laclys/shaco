@@ -74,7 +74,7 @@ export async function build(root: string) {
   const [clientBundle, serverBundle] = await bundle(root)
   // import server-entry
   const serverEntryPath = path.join(PACKAGE_ROOT, root, ".temp", "ssr-entry.js");
-  console.log('serverEntryPath', serverEntryPath)
+  // console.log('serverEntryPath', serverEntryPath)
   // ssr -> htmt
   const { render } = require(serverEntryPath);
   await renderPage(render, root, clientBundle as RollupOutput)

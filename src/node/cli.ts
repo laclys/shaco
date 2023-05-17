@@ -12,7 +12,6 @@ cli.command('dev [root]', 'start dev server').action(async(root:string) => {
 })
 
 cli.command('build [root]', 'build in prod').action(async(root:string) => {
-  // console.log('build', root)
   await build(root)
 })
 

@@ -11,7 +11,6 @@ cli.command('dev [root]', 'start dev server').action(async (root) => {
     server.printUrls();
 });
 cli.command('build [root]', 'build in prod').action(async (root) => {
-    // console.log('build', root)
     await (0, build_1.build)(root);
 });
 cli.parse();
