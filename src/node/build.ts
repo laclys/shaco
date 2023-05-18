@@ -1,5 +1,5 @@
 import * as path from 'path'
-import * as fs from 'fs-extra'
+import fs from 'fs-extra'
 import { InlineConfig, build as viteBuild } from 'vite'
 import { CLIENT_ENTRY_PATH, PACKAGE_ROOT, SERVER_ENTRY_PATH } from './constants'
 import type { RollupOutput } from 'rollup'
@@ -76,6 +76,6 @@ export async function build(root: string) {
   const serverEntryPath = path.join(PACKAGE_ROOT, root, ".temp", "ssr-entry.js");
   // console.log('serverEntryPath', serverEntryPath)
   // ssr -> htmt
-  const { render } = require(serverEntryPath);
+  const { render } = await import(serverEntryPath);
   await renderPage(render, root, clientBundle as RollupOutput)
 }

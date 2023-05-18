@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc -w"
+    "start": "tsup --watch",
+    "build": "tsup"
   },
   "bin": {
     "shaco": "bin/shaco.js"
@@ -18,6 +19,7 @@
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "rollup": "^3.22.0",
+    "tsup": "^6.7.0",
     "typescript": "^5.0.4"
   },
   "dependencies": {
