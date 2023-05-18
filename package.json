@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "start": "tsup --watch",
     "build": "tsup",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx ./"
   },
   "bin": {
     "shaco": "bin/shaco.js"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts}": [
+      "eslint --fix"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -24,6 +30,8 @@
     "eslint": "^8.40.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "rollup": "^3.22.0",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"
