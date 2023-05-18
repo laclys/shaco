@@ -15,12 +15,12 @@ export function pluginIndexHtml(): Plugin {
             tag: 'script',
             attrs: {
               type: 'module',
-              // /@fs/: 
-              src: `/@fs/${CLIENT_ENTRY_PATH}`,
+              // /@fs/:
+              src: `/@fs/${CLIENT_ENTRY_PATH}`
             },
-            injectTo: 'body',
-          },
-        ],
+            injectTo: 'body'
+          }
+        ]
       }
     },
     configureServer(server) {
@@ -45,6 +45,6 @@ export function pluginIndexHtml(): Plugin {
           }
         })
       }
-    },
+    }
   }
 }

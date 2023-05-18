@@ -16,10 +16,10 @@ export async function bundle(root: string) {
           rollupOptions: {
             input: isServer ? SERVER_ENTRY_PATH : CLIENT_ENTRY_PATH,
             output: {
-              format: isServer ? 'cjs' : 'esm',
-            },
-          },
-        },
+              format: isServer ? 'cjs' : 'esm'
+            }
+          }
+        }
       }
     }
 
@@ -33,7 +33,7 @@ export async function bundle(root: string) {
     console.log('building client & server bundles...')
     const [clientBundle, serverBundle] = await Promise.all([
       clientBuild(),
-      serverBuild(),
+      serverBuild()
     ])
     return [clientBundle, serverBundle]
   } catch (e) {
@@ -48,8 +48,8 @@ export async function renderPage(
 ) {
   const appHtml = render()
   const clientChunk = clientBundle.output.find(
-    (chunk) => chunk.type === "chunk" && chunk.isEntry
-  );
+    (chunk) => chunk.type === 'chunk' && chunk.isEntry
+  )
   const html = `
   <!DOCTYPE html>
   <html>
@@ -71,11 +71,11 @@ export async function renderPage(
 
 export async function build(root: string) {
   // 1. bundle : client + server
-  const [clientBundle, serverBundle] = await bundle(root)
+  const [clientBundle] = await bundle(root)
   // import server-entry
-  const serverEntryPath = path.join(PACKAGE_ROOT, root, ".temp", "ssr-entry.js");
+  const serverEntryPath = path.join(PACKAGE_ROOT, root, '.temp', 'ssr-entry.js')
   // console.log('serverEntryPath', serverEntryPath)
   // ssr -> htmt
-  const { render } = await import(serverEntryPath);
+  const { render } = await import(serverEntryPath)
   await renderPage(render, root, clientBundle as RollupOutput)
 }

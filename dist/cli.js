@@ -39,7 +39,7 @@ function pluginIndexHtml() {
             tag: "script",
             attrs: {
               type: "module",
-              // /@fs/: 
+              // /@fs/:
               src: `/@fs/${CLIENT_ENTRY_PATH}`
             },
             injectTo: "body"
@@ -138,7 +138,7 @@ async function renderPage(render, root, clientBundle) {
   await _fsextra2.default.remove(path2.join(root, ".temp"));
 }
 async function build(root) {
-  const [clientBundle, serverBundle] = await bundle(root);
+  const [clientBundle] = await bundle(root);
   const serverEntryPath = path2.join(PACKAGE_ROOT, root, ".temp", "ssr-entry.js");
   const { render } = await Promise.resolve().then(() => _interopRequireWildcard(require(serverEntryPath)));
   await renderPage(render, root, clientBundle);

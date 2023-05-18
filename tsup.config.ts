@@ -8,4 +8,4 @@ export default defineConfig({
   format: ['cjs', 'esm'],
   dts: true,
   shims: true
-});
+})

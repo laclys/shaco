@@ -46,7 +46,7 @@ function pluginIndexHtml() {
             tag: "script",
             attrs: {
               type: "module",
-              // /@fs/: 
+              // /@fs/:
               src: `/@fs/${CLIENT_ENTRY_PATH}`
             },
             injectTo: "body"
@@ -145,7 +145,7 @@ async function renderPage(render, root, clientBundle) {
   await fs.remove(path3.join(root, ".temp"));
 }
 async function build(root) {
-  const [clientBundle, serverBundle] = await bundle(root);
+  const [clientBundle] = await bundle(root);
   const serverEntryPath = path3.join(PACKAGE_ROOT, root, ".temp", "ssr-entry.js");
   const { render } = await import(serverEntryPath);
   await renderPage(render, root, clientBundle);
