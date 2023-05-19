@@ -76,8 +76,43 @@ function pluginIndexHtml() {
   };
 }
 
+// src/node/config.ts
+import { resolve } from "path";
+import fs from "fs-extra";
+import { loadConfigFromFile } from "vite";
+function getUserConfigPath(root) {
+  try {
+    const supportConfigFiles = ["config.ts", "config.js"];
+    const configPath = supportConfigFiles.map((file) => resolve(root, file)).find(fs.pathExistsSync);
+    return configPath;
+  } catch (e) {
+    console.error(`Failed to load user config: ${e}`);
+    throw e;
+  }
+}
+async function resolveConfig(root, command, mode) {
+  const configPath = getUserConfigPath(root);
+  const ret = await loadConfigFromFile(
+    {
+      command,
+      mode
+    },
+    configPath,
+    root
+  );
+  if (ret) {
+    const { config: rawConfig = {} } = ret;
+    const userConfig = await (typeof rawConfig === "function" ? rawConfig() : rawConfig);
+    return [configPath, userConfig];
+  } else {
+    return [configPath, {}];
+  }
+}
+
 // src/node/dev.ts
 async function createDevServer(root = process.cwd()) {
+  const config = await resolveConfig(root, "serve", "development");
+  console.log("config", config);
   return createServer({
     root,
     plugins: [pluginIndexHtml(), pluginReact()],
@@ -91,7 +126,7 @@ async function createDevServer(root = process.cwd()) {
 
 // src/node/build.ts
 import * as path3 from "path";
-import fs from "fs-extra";
+import fs2 from "fs-extra";
 import { build as viteBuild } from "vite";
 async function bundle(root) {
   try {
@@ -146,8 +181,8 @@ async function renderPage(render, root, clientBundle) {
       <script type="module" src="/${clientChunk?.fileName}"></script>
     </body>
   </html>`.trim();
-  await fs.writeFile(path3.join(root, "build/index.html"), html);
-  await fs.remove(path3.join(root, ".temp"));
+  await fs2.writeFile(path3.join(root, "build/index.html"), html);
+  await fs2.remove(path3.join(root, ".temp"));
 }
 async function build(root) {
   const [clientBundle] = await bundle(root);
