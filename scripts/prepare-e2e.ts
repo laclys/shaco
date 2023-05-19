@@ -20,18 +20,13 @@ async function prepareE2E() {
   }
 
   execa.commandSync('npx playwright install', {
-    cwd: path.join(__dirname, '../'),
+    cwd: path.resolve(__dirname, '../'),
     stdout: process.stdout,
     stdin: process.stdin,
     stderr: process.stderr
   })
 
-  // execa.commandSync('pnpm i', {
-  //   cwd: exampleDir,
-  //   stdout: process.stdout,
-  //   stdin: process.stdin,
-  //   stderr: process.stderr
-  // });
+  // execa.commandSync('pnpm i', defaultExecaOpts);
 
   // exec dev command
   execa.commandSync('pnpm dev', defaultExecaOpts)
