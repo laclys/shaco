@@ -80,7 +80,12 @@ function pluginIndexHtml() {
 async function createDevServer(root = process.cwd()) {
   return createServer({
     root,
-    plugins: [pluginIndexHtml(), pluginReact()]
+    plugins: [pluginIndexHtml(), pluginReact()],
+    server: {
+      fs: {
+        allow: [PACKAGE_ROOT]
+      }
+    }
   });
 }
 

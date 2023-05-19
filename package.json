@@ -8,7 +8,9 @@
     "start": "tsup --watch",
     "build": "tsup",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx ./",
-    "test:unit": "vitest --ui"
+    "test:unit": "vitest --ui",
+    "prepare:e2e": "tsx scripts/prepare-e2e.ts",
+    "test:e2e": "playwright test"
   },
   "bin": {
     "shaco": "bin/shaco.js"
@@ -22,6 +24,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@playwright/test": "1.26.1",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.1.7",
     "@types/react": "^18.2.6",
@@ -32,10 +35,12 @@
     "eslint": "^8.40.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "execa": "5.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "rollup": "^3.22.0",
     "tsup": "^6.7.0",
+    "tsx": "^3.12.7",
     "typescript": "^5.0.4",
     "vitest": "^0.31.1"
   },
