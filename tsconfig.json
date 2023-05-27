@@ -7,7 +7,10 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "baseUrl": "src",
-    "rootDir": "."
+    "rootDir": ".",
+    "paths": {
+      "@runtime": ["runtime/index.ts"]
+    }
   },
   "include": ["e2e/**/*.ts", "src/**/*.ts", "src/**/*.tsx"]
 }
