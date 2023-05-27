@@ -1,15 +1,23 @@
 import * as path from 'path'
 import fs from 'fs-extra'
+import pluginReact from '@vitejs/plugin-react'
 import { InlineConfig, build as viteBuild } from 'vite'
 import { CLIENT_ENTRY_PATH, PACKAGE_ROOT, SERVER_ENTRY_PATH } from './constants'
 import type { RollupOutput } from 'rollup'
+import { SiteConfig } from 'shared/types'
+import { pluginConfig } from './plugin/config'
 
-export async function bundle(root: string) {
+export async function bundle(root: string, config: SiteConfig) {
   try {
     const resolveViteConfig = (isServer: boolean): InlineConfig => {
       return {
         mode: 'production',
         root,
+        ssr: {
+          // 直接打到产物中
+          noExternal: ['react-router-dom']
+        },
+        plugins: [pluginReact(), pluginConfig(config)],
         build: {
           ssr: isServer,
           outDir: isServer ? '.temp' : 'build',
@@ -69,9 +77,9 @@ export async function renderPage(
   await fs.remove(path.join(root, '.temp'))
 }
 
-export async function build(root: string) {
+export async function build(root: string, config: SiteConfig) {
   // 1. bundle : client + server
-  const [clientBundle] = await bundle(root)
+  const [clientBundle] = await bundle(root, config)
   // import server-entry
   const serverEntryPath = path.join(PACKAGE_ROOT, root, '.temp', 'ssr-entry.js')
   // console.log('serverEntryPath', serverEntryPath)

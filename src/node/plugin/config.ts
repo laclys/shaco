@@ -8,7 +8,7 @@ const SITE_DATA_ID = 'shaco:site-data'
 
 export function pluginConfig(
   config: SiteConfig,
-  restart: () => Promise<void>
+  restart?: () => Promise<void>
 ): Plugin {
   return {
     name: 'shaco:config',

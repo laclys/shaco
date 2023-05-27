@@ -1,5 +1,6 @@
 import cac from 'cac'
 import { build } from './build'
+import { resolveConfig } from './config'
 
 const cli = cac('shaco').version('0.0.1').help()
 
@@ -17,7 +18,8 @@ cli.command('dev [root]', 'start dev server').action(async (root: string) => {
 })
 
 cli.command('build [root]', 'build in prod').action(async (root: string) => {
-  await build(root)
+  const config = await resolveConfig(root, 'build', 'production')
+  await build(root, config)
 })
 
 cli.parse()
