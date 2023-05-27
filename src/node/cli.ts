@@ -1,5 +1,4 @@
 import cac from 'cac'
-import { createDevServer } from './dev'
 import { build } from './build'
 
 const cli = cac('shaco').version('0.0.1').help()
