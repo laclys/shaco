@@ -1,5 +1,5 @@
 import { defineConfig } from '../dist'
 
 export default defineConfig({
-  title: "test"
+  title: "test12332"
 })
