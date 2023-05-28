@@ -1,3 +1,4 @@
+import { Plugin } from 'vite'
 import { pluginIndexHtml } from './plugin/indexHtml'
 import pluginReact from '@vitejs/plugin-react'
 import { pluginConfig } from './plugin/config'
@@ -19,5 +20,5 @@ export function createVitePlugins(
       root: config.root
     }),
     createPluginMdx()
-  ]
+  ] as Plugin[]
 }
