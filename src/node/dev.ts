@@ -4,6 +4,7 @@ import { pluginIndexHtml } from './plugin/indexHtml'
 import { PACKAGE_ROOT } from './constants'
 import { resolveConfig } from './config'
 import { pluginConfig } from './plugin/config'
+import { pluginRoutes } from './plugin-routes'
 
 export async function createDevServer(
   root = process.cwd(),
@@ -13,7 +14,14 @@ export async function createDevServer(
   // console.log('config', config)
   return createServer({
     root: PACKAGE_ROOT,
-    plugins: [pluginIndexHtml(), pluginReact(), pluginConfig(config, restart)],
+    plugins: [
+      pluginIndexHtml(),
+      pluginReact(),
+      pluginConfig(config, restart),
+      pluginRoutes({
+        root: config.root
+      })
+    ],
     server: {
       fs: {
         allow: [PACKAGE_ROOT]
