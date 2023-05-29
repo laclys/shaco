@@ -8,7 +8,9 @@ import { createVitePlugins } from './vitePlugins'
 
 export async function bundle(root: string, config: SiteConfig) {
   try {
-    const resolveViteConfig = (isServer: boolean): InlineConfig => {
+    const resolveViteConfig = async (
+      isServer: boolean
+    ): Promise<InlineConfig> => {
       return {
         mode: 'production',
         root,
@@ -16,7 +18,7 @@ export async function bundle(root: string, config: SiteConfig) {
           // 直接打到产物中
           noExternal: ['react-router-dom']
         },
-        plugins: createVitePlugins(config),
+        plugins: await createVitePlugins(config),
         build: {
           ssr: isServer,
           outDir: isServer ? '.temp' : 'build',
@@ -31,11 +33,11 @@ export async function bundle(root: string, config: SiteConfig) {
     }
 
     const clientBuild = async () => {
-      return viteBuild(resolveViteConfig(false))
+      return viteBuild(await resolveViteConfig(false))
     }
 
-    const serverBuild = () => {
-      return viteBuild(resolveViteConfig(true))
+    const serverBuild = async () => {
+      return viteBuild(await resolveViteConfig(true))
     }
     console.log('building client & server bundles...')
     const [clientBundle, serverBundle] = await Promise.all([

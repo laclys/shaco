@@ -1,3 +1,4 @@
+import shiki from 'shiki'
 import pluginMdx from '@mdx-js/rollup'
 import remarkPluginGFM from 'remark-gfm'
 import rehypePluginAutolinkHeadings from 'rehype-autolink-headings'
@@ -5,8 +6,9 @@ import rehypePluginSlug from 'rehype-slug'
 import remarkPluginMDXFrontMatter from 'remark-mdx-frontmatter'
 import remarkPluginFrontmatter from 'remark-frontmatter'
 import { rehypePluginPreWrapper } from './plugin-rehype/preWrapper'
+import { rehypePluginShiki } from './plugin-rehype/shiki'
 
-export function pluginMdxRollup() {
+export async function pluginMdxRollup() {
   return pluginMdx({
     remarkPlugins: [
       remarkPluginGFM, // // GitHub flavored markdown ref: https://mdxjs.com/guides/gfm/
@@ -27,7 +29,11 @@ export function pluginMdxRollup() {
           }
         }
       ],
-      rehypePluginPreWrapper
-    ] // rehype-autolink-headings rehype-slug 标题元素增加一个锚点
+      rehypePluginPreWrapper, // rehype-autolink-headings rehype-slug 标题元素增加一个锚点
+      [
+        rehypePluginShiki,
+        { highlighter: await shiki.getHighlighter({ theme: 'nord' }) }
+      ]
+    ]
   })
 }
