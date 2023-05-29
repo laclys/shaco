@@ -4,6 +4,7 @@ import rehypePluginAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePluginSlug from 'rehype-slug'
 import remarkPluginMDXFrontMatter from 'remark-mdx-frontmatter'
 import remarkPluginFrontmatter from 'remark-frontmatter'
+import { rehypePluginPreWrapper } from './plugin-rehype/preWrapper'
 
 export function pluginMdxRollup() {
   return pluginMdx({
@@ -25,7 +26,8 @@ export function pluginMdxRollup() {
             value: '#'
           }
         }
-      ]
+      ],
+      rehypePluginPreWrapper
     ] // rehype-autolink-headings rehype-slug 标题元素增加一个锚点
   })
 }
