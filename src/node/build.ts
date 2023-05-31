@@ -5,6 +5,7 @@ import { CLIENT_ENTRY_PATH, PACKAGE_ROOT, SERVER_ENTRY_PATH } from './constants'
 import type { RollupOutput } from 'rollup'
 import { SiteConfig } from 'shared/types'
 import { createVitePlugins } from './vitePlugins'
+import { Route } from './plugin-routes'
 
 export async function bundle(root: string, config: SiteConfig) {
   try {
@@ -18,7 +19,7 @@ export async function bundle(root: string, config: SiteConfig) {
           // 直接打到产物中
           noExternal: ['react-router-dom']
         },
-        plugins: await createVitePlugins(config),
+        plugins: await createVitePlugins(config, undefined, isServer),
         build: {
           ssr: isServer,
           outDir: isServer ? '.temp' : 'build',
@@ -51,30 +52,39 @@ export async function bundle(root: string, config: SiteConfig) {
 }
 
 export async function renderPage(
-  render: () => string,
+  render: (path: string) => string,
   root: string,
-  clientBundle: RollupOutput
+  clientBundle: RollupOutput,
+  routes: Route[]
 ) {
-  const appHtml = render()
   const clientChunk = clientBundle.output.find(
     (chunk) => chunk.type === 'chunk' && chunk.isEntry
   )
-  const html = `
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>title</title>
-      <meta name="description" content="xxx">
-    </head>
-    <body>
-      <div id="root">${appHtml}</div>
-      <script type="module" src="/${clientChunk?.fileName}"></script>
-    </body>
-  </html>`.trim()
-  // await fs.ensureDir(path.join(root, 'build'))
-  await fs.writeFile(path.join(root, 'build/index.html'), html)
+  await Promise.all(
+    routes.map(async (route) => {
+      const routePath = route.path
+      const appHtml = render(routePath)
+      const html = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width,initial-scale=1">
+          <title>title</title>
+          <meta name="description" content="xxx">
+        </head>
+        <body>
+          <div id="root">${appHtml}</div>
+          <script type="module" src="/${clientChunk?.fileName}"></script>
+        </body>
+      </html>`.trim()
+      const fileName = routePath.endsWith('/')
+        ? `${routePath}index.html`
+        : `${routePath}.html`
+      await fs.ensureDir(path.join(root, 'build', path.dirname(fileName)))
+      await fs.writeFile(path.join(root, 'build', fileName), html)
+    })
+  )
   await fs.remove(path.join(root, '.temp'))
 }
 
@@ -85,6 +95,6 @@ export async function build(root: string, config: SiteConfig) {
   const serverEntryPath = path.join(PACKAGE_ROOT, root, '.temp', 'ssr-entry.js')
   // console.log('serverEntryPath', serverEntryPath)
   // ssr -> htmt
-  const { render } = await import(serverEntryPath)
-  await renderPage(render, root, clientBundle as RollupOutput)
+  const { render, routes } = await import(serverEntryPath)
+  await renderPage(render, root, clientBundle as RollupOutput, routes)
 }

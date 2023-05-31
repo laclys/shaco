@@ -8,7 +8,8 @@ import { SiteConfig } from 'shared/types'
 
 export async function createVitePlugins(
   config: SiteConfig,
-  restartServer?: () => Promise<void>
+  restartServer: () => Promise<void>,
+  isSsr: boolean
 ) {
   return [
     pluginIndexHtml(),
@@ -17,7 +18,8 @@ export async function createVitePlugins(
     }),
     pluginConfig(config, restartServer),
     pluginRoutes({
-      root: config.root
+      root: config.root,
+      isSsr
     }),
     await createPluginMdx()
   ] as Plugin[]

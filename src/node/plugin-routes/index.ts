@@ -3,6 +3,11 @@ import { RouteService } from './RouteService'
 
 interface PluginOptions {
   root: string
+  isSsr: boolean
+}
+export interface Route {
+  path: string
+  element: React.ReactElement
 }
 
 export const CONVENTIONAL_ROUTE_ID = 'shaco:routes'
@@ -21,7 +26,7 @@ export function pluginRoutes(options: PluginOptions): Plugin {
     },
     load(id: string) {
       if (id === '\0' + CONVENTIONAL_ROUTE_ID) {
-        return routerService.generateRoutesCode()
+        return routerService.generateRoutesCode(options.isSsr || false)
       }
     }
   }
