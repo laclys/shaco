@@ -1,13 +1,18 @@
+import { usePageData } from '@runtime'
 import 'uno.css'
-import { Content } from '@runtime'
 
 export function Layout() {
-  return (
-    <div>
-      <h1 p="2" m="2">
-        Common Component
-      </h1>
-      <Content />
-    </div>
-  )
+  const pageData = usePageData()
+  const { pageType } = pageData
+
+  const getContent = () => {
+    if (pageType === 'home') {
+      return <div>Home</div>
+    } else if (pageType === 'doc') {
+      return <div>Doc</div>
+    } else {
+      return <div>404 page</div>
+    }
+  }
+  return <div>{getContent()}</div>
 }

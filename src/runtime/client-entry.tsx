@@ -1,23 +1,24 @@
 import { createRoot } from 'react-dom/client'
-import { App, initPageData } from './App'
 import { BrowserRouter } from 'react-router-dom'
-
 import siteData from 'shaco:site-data'
+import { App, initPageData } from './App'
+import { DataContext } from './hooks'
 
-function renderInBrowser() {
+async function renderInBrowser() {
   console.log('siteData', siteData)
   const containerEl = document.getElementById('root')
   if (!containerEl) {
     throw new Error('#root element not found')
   }
-
   // init page data
-  const pageData = initPageData(location.pathname)
+  const pageData = await initPageData(location.pathname)
 
   createRoot(containerEl).render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <DataContext.Provider value={pageData}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </DataContext.Provider>
   )
 }
 
