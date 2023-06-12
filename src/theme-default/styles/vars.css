@@ -1,0 +1,356 @@
+/**
+ * Colors Base
+ *
+ * These are the pure base color presets. Most of the time, you should not be
+ * using these colors directly in the theme but rather use "Colors Theme"
+ * instead because those are "Theme (light or dark)" dependant.
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --shaco-c-white: #ffffff;
+  --shaco-c-white-soft: #f9f9f9;
+  --shaco-c-white-mute: #f1f1f1;
+
+  --shaco-c-black: #1a1a1a;
+  --shaco-c-black-pure: #000000;
+  --shaco-c-black-soft: #242424;
+  --shaco-c-black-mute: #2f2f2f;
+
+  --shaco-c-gray: #8e8e8e;
+  --shaco-c-gray-light-1: #aeaeae;
+  --shaco-c-gray-light-2: #c7c7c7;
+  --shaco-c-gray-light-3: #d1d1d1;
+  --shaco-c-gray-light-4: #e5e5e5;
+  --shaco-c-gray-light-5: #f2f2f2;
+  --shaco-c-gray-dark-1: #636363;
+  --shaco-c-gray-dark-2: #484848;
+  --shaco-c-gray-dark-3: #3a3a3a;
+  --shaco-c-gray-dark-4: #282828;
+  --shaco-c-gray-dark-5: #202020;
+
+  --shaco-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --shaco-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --shaco-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --shaco-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --shaco-c-indigo: #213547;
+  --shaco-c-indigo-soft: #476582;
+  --shaco-c-indigo-light: #aac8e4;
+  --shaco-c-indigo-lighter: #c9def1;
+  --shaco-c-indigo-dark: #1d2f3f;
+  --shaco-c-indigo-darker: #14212e;
+
+  --shaco-c-text-light-1: var(--shaco-c-indigo);
+  --shaco-c-text-light-2: rgba(60, 60, 60, 0.7);
+  --shaco-c-text-light-3: rgba(60, 60, 60, 0.33);
+  --shaco-c-text-light-4: rgba(60, 60, 60, 0.18);
+
+  --shaco-c-text-dark-1: rgba(255, 255, 255, 0.87);
+  --shaco-c-text-dark-2: rgba(235, 235, 235, 0.6);
+  --shaco-c-text-dark-3: rgba(235, 235, 235, 0.38);
+  --shaco-c-text-dark-4: rgba(235, 235, 235, 0.18);
+
+  --shaco-c-green: #21b8a3;
+  --shaco-c-green-light: #41c6b0;
+  --shaco-c-green-lighter: #41c6b0;
+  --shaco-c-green-dark: #149684;
+  --shaco-c-green-darker: #149684;
+  --shaco-c-green-dimm: #062521;
+
+  --shaco-c-green-dimm-1: rgba(66, 184, 131, 0.5);
+  --shaco-c-green-dimm-2: rgba(66, 184, 131, 0.25);
+  --shaco-c-green-dimm-3: rgba(66, 184, 131, 0.05);
+
+  --shaco-c-blue: #646cff;
+  --shaco-c-blue-light: #747bff;
+  --shaco-c-blue-lighter: #9499ff;
+  --shaco-c-blue-lightest: #bcc0ff;
+  --shaco-c-blue-dark: #535bf2;
+  --shaco-c-blue-darker: #454ce1;
+  --shaco-c-blue-dimm: rgba(100, 108, 255, 0.08);
+
+  --shaco-c-yellow: #ffc517;
+  --shaco-c-yellow-light: #fcd253;
+  --shaco-c-yellow-lighter: #fcfc7c;
+  --shaco-c-yellow-darker: #ad850e;
+  --shaco-c-yellow-dimm-1: rgba(255, 197, 23, 0.5);
+  --shaco-c-yellow-dimm-2: rgba(255, 197, 23, 0.25);
+  --shaco-c-yellow-dimm-3: rgba(255, 197, 23, 0.05);
+
+  --shaco-c-red: #ed3c50;
+  --shaco-c-red-light: #f54e82;
+  --shaco-c-red-lighter: #fd1d7c;
+  --shaco-c-red-darker: #ab2131;
+  --shaco-c-red-dimm-1: rgba(237, 60, 80, 0.5);
+  --shaco-c-red-dimm-2: rgba(237, 60, 80, 0.25);
+  --shaco-c-red-dimm-3: rgba(237, 60, 80, 0.05);
+}
+
+/**
+ * Colors Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-c-bg: var(--shaco-c-white);
+  --shaco-c-bg-soft: var(--shaco-c-white-soft);
+  --shaco-c-bg-mute: var(--shaco-c-white-mute);
+  --shaco-c-bg-alt: var(--shaco-c-white-soft);
+
+  --shaco-c-divider: var(--shaco-c-divider-light-1);
+  --shaco-c-divider-light: var(--shaco-c-divider-light-2);
+
+  --shaco-c-text-1: var(--shaco-c-text-light-1);
+  --shaco-c-text-2: var(--shaco-c-text-light-2);
+  --shaco-c-text-3: var(--shaco-c-text-light-3);
+  --shaco-c-text-4: var(--shaco-c-text-light-4);
+
+  --shaco-c-text-code: var(--shaco-c-indigo-soft);
+
+  --shaco-c-brand: var(--shaco-c-green);
+  --shaco-c-brand-light: var(--shaco-c-green-light);
+  --shaco-c-brand-lighter: var(--shaco-c-green-lighter);
+  --shaco-c-brand-dark: var(--shaco-c-green-dark);
+  --shaco-c-brand-darker: var(--shaco-c-green-darker);
+}
+
+.dark {
+  --shaco-c-bg: var(--shaco-c-black-soft);
+  --shaco-c-bg-soft: var(--shaco-c-black-mute);
+  --shaco-c-bg-mute: var(--shaco-c-gray-dark-3);
+  --shaco-c-bg-alt: var(--shaco-c-black);
+
+  --shaco-c-divider: var(--shaco-c-divider-dark-1);
+  --shaco-c-divider-light: var(--shaco-c-divider-dark-2);
+
+  --shaco-c-divider-inverse: var(--shaco-c-divider-light-1);
+  --shaco-c-divider-inverse-light: var(--shaco-c-divider-light-2);
+
+  --shaco-c-text-1: var(--shaco-c-text-dark-1);
+  --shaco-c-text-2: var(--shaco-c-text-dark-2);
+  --shaco-c-text-3: var(--shaco-c-text-dark-3);
+  --shaco-c-text-4: var(--shaco-c-text-dark-4);
+
+  --shaco-c-text-inverse-1: var(--shaco-c-text-light-1);
+  --shaco-c-text-inverse-2: var(--shaco-c-text-light-2);
+  --shaco-c-text-inverse-3: var(--shaco-c-text-light-3);
+  --shaco-c-text-inverse-4: var(--shaco-c-text-light-4);
+
+  --shaco-c-text-code: var(--shaco-c-indigo-lighter);
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-font-family-base: 'Inter var experimental', 'Inter var',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --shaco-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/**
+ * Layouts
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-layout-max-width: 1440px;
+}
+
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-code-line-height: 1.7;
+  --shaco-code-font-size: 0.875em;
+
+  --shaco-code-block-color: var(--shaco-c-text-dark-1);
+  --shaco-code-block-bg: #292d3e;
+
+  --shaco-code-line-highlight-color: rgba(0, 0, 0, 0.5);
+  --shaco-code-line-number-color: var(--shaco-c-text-dark-3);
+
+  --shaco-code-copy-code-hover-bg: rgba(255, 255, 255, 0.05);
+  --shaco-code-copy-code-active-text: var(--shaco-c-text-dark-2);
+}
+
+/**
+ * Icons
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-icon-copy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E");
+  --shaco-icon-copied: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E");
+  --shaco-icon-tip: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M512 960C264.58 960 64 759.42 64 512S264.58 64 512 64s448 200.58 448 448-200.58 448-448 448z m0-832c-212.08 0-384 171.92-384 384s171.92 384 384 384 384-171.92 384-384-171.92-384-384-384z m0 112c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z m0 160c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32 17.67 0 32-14.33 32-32V432c0-17.67-14.33-32-32-32z' fill='%2321b8a3'/%3E%3C/svg%3E");
+}
+
+.dark {
+  --shaco-code-block-bg: var(--shaco-c-bg-alt);
+}
+
+/**
+ * Z-indexes
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-z-index-local-nav: 10;
+  --shaco-z-index-nav: 20;
+  --shaco-z-index-layout-top: 30;
+  --shaco-z-index-backdrop: 40;
+  --shaco-z-index-sidebar: 50;
+  --shaco-z-index-footer: 60;
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-button-brand-border: var(--shaco-c-brand-light);
+  --shaco-button-brand-text: var(--shaco-c-text-dark-1);
+  --shaco-button-brand-bg: var(--shaco-c-brand);
+  --shaco-button-brand-hover-border: var(--shaco-c-brand-light);
+  --shaco-button-brand-hover-text: var(--shaco-c-text-dark-1);
+  --shaco-button-brand-hover-bg: var(--shaco-c-brand-light);
+  --shaco-button-brand-active-border: var(--shaco-c-brand-light);
+  --shaco-button-brand-active-text: var(--shaco-c-text-dark-1);
+  --shaco-button-brand-active-bg: var(--shaco-button-brand-bg);
+
+  --shaco-button-alt-border: var(--shaco-c-gray-light-3);
+  --shaco-button-alt-text: var(--shaco-c-text-light-1);
+  --shaco-button-alt-bg: var(--shaco-c-gray-light-5);
+  --shaco-button-alt-hover-border: var(--shaco-c-gray-light-3);
+  --shaco-button-alt-hover-text: var(--shaco-c-text-light-1);
+  --shaco-button-alt-hover-bg: var(--shaco-c-gray-light-4);
+  --shaco-button-alt-active-border: var(--shaco-c-gray-light-3);
+  --shaco-button-alt-active-text: var(--shaco-c-text-light-1);
+  --shaco-button-alt-active-bg: var(--shaco-c-gray-light-3);
+
+  --shaco-button-sponsor-border: var(--shaco-c-gray-light-3);
+  --shaco-button-sponsor-text: var(--shaco-c-text-light-2);
+  --shaco-button-sponsor-bg: transparent;
+  --shaco-button-sponsor-hover-border: var(--shaco-c-sponsor);
+  --shaco-button-sponsor-hover-text: var(--shaco-c-sponsor);
+  --shaco-button-sponsor-hover-bg: transparent;
+  --shaco-button-sponsor-active-border: var(--shaco-c-sponsor);
+  --shaco-button-sponsor-active-text: var(--shaco-c-sponsor);
+  --shaco-button-sponsor-active-bg: transparent;
+}
+
+.dark {
+  --shaco-button-brand-border: var(--shaco-c-brand-light);
+  --shaco-button-brand-text: var(--shaco-c-text-dark-1);
+  --shaco-button-brand-bg: var(--shaco-c-brand-dark);
+  --shaco-button-brand-hover-border: var(--shaco-c-brand-lighter);
+  --shaco-button-brand-hover-text: var(--shaco-c-text-dark-1);
+  --shaco-button-brand-hover-bg: var(--shaco-c-brand);
+  --shaco-button-brand-active-border: var(--shaco-c-brand-lighter);
+  --shaco-button-brand-active-text: var(--shaco-c-text-dark-1);
+  --shaco-button-brand-active-bg: var(--shaco-button-brand-bg);
+
+  --shaco-button-alt-border: var(--shaco-c-gray-dark-2);
+  --shaco-button-alt-text: var(--shaco-c-text-dark-1);
+  --shaco-button-alt-bg: var(--shaco-c-bg-mute);
+  --shaco-button-alt-hover-border: var(--shaco-c-gray-dark-2);
+  --shaco-button-alt-hover-text: var(--shaco-c-text-dark-1);
+  --shaco-button-alt-hover-bg: var(--shaco-c-gray-dark-2);
+  --shaco-button-alt-active-border: var(--shaco-c-gray-dark-2);
+  --shaco-button-alt-active-text: var(--shaco-c-text-dark-1);
+  --shaco-button-alt-active-bg: var(--shaco-button-alt-bg);
+
+  --shaco-button-sponsor-border: var(--shaco-c-gray-dark-1);
+  --shaco-button-sponsor-text: var(--shaco-c-text-dark-2);
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-custom-block-code-font-size: 13px;
+
+  --shaco-custom-block-info-border: var(--shaco-c-divider-light);
+  --shaco-custom-block-info-text: var(--shaco-c-text-2);
+  --shaco-custom-block-info-bg: var(--shaco-c-white-soft);
+  --shaco-custom-block-info-code-bg: var(--shaco-c-gray-light-4);
+
+  --shaco-custom-block-tip-border: var(--shaco-c-green-dimm-1);
+  --shaco-custom-block-tip-text: var(--shaco-c-green-darker);
+  --shaco-custom-block-tip-bg: var(--shaco-c-green-dimm-3);
+  --shaco-custom-block-tip-code-bg: var(--shaco-custom-block-tip-bg);
+
+  --shaco-custom-block-warning-border: var(--shaco-c-yellow-dimm-1);
+  --shaco-custom-block-warning-text: var(--shaco-c-yellow-darker);
+  --shaco-custom-block-warning-bg: var(--shaco-c-yellow-dimm-3);
+  --shaco-custom-block-warning-code-bg: var(--shaco-custom-block-warning-bg);
+
+  --shaco-custom-block-danger-border: var(--shaco-c-red-dimm-1);
+  --shaco-custom-block-danger-text: var(--shaco-c-red-darker);
+  --shaco-custom-block-danger-bg: var(--shaco-c-red-dimm-3);
+  --shaco-custom-block-danger-code-bg: var(--shaco-custom-block-danger-bg);
+}
+
+.dark {
+  --shaco-custom-block-info-border: var(--shaco-c-divider-light);
+  --shaco-custom-block-info-bg: var(--shaco-c-black-mute);
+  --shaco-custom-block-info-code-bg: var(--shaco-c-gray-dark-4);
+
+  --shaco-custom-block-tip-border: var(--shaco-c-green-dimm-2);
+  --shaco-custom-block-tip-text: var(--shaco-c-green-light);
+
+  --shaco-custom-block-warning-border: var(--shaco-c-yellow-dimm-2);
+  --shaco-custom-block-warning-text: var(--shaco-c-yellow-light);
+
+  --shaco-custom-block-danger-border: var(--shaco-c-red-dimm-2);
+  --shaco-custom-block-danger-text: var(--shaco-c-red-light);
+}
+
+/**
+ * Component: Nav
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-nav-height: 56px;
+}
+
+/**
+ * Component: Sidebar
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-sidebar-width: 272px;
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-home-hero-name-color: transparent;
+  --shaco-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    var(--shaco-c-brand) 30%,
+    #41d1ff
+  );
+
+  --shaco-home-hero-image-background-image: none;
+  --shaco-home-hero-image-filter: none;
+}
+
+/**
+ * Shadows
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --shaco-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+  --shaco-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07),
+    0 1px 4px rgba(0, 0, 0, 0.07);
+  --shaco-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  --shaco-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12),
+    0 3px 9px rgba(0, 0, 0, 0.12);
+  --shaco-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16),
+    0 4px 12px rgba(0, 0, 0, 0.16);
+}
