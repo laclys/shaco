@@ -1,4 +1,8 @@
 import { usePageData } from '@runtime'
+import { Nav } from '../components/Nav'
+
+import '../styles/base.css'
+import '../styles/vars.css'
 import 'uno.css'
 
 export function Layout() {
@@ -14,5 +18,10 @@ export function Layout() {
       return <div>404 page</div>
     }
   }
-  return <div>{getContent()}</div>
+  return (
+    <div>
+      <Nav />
+      {getContent()}
+    </div>
+  )
 }

@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "start": "tsup --watch",
     "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "tsup --watch",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx ./",
     "test:unit": "vitest run",
     "prepare:e2e": "tsx scripts/prepare-e2e.ts",
@@ -24,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@iconify-json/carbon": "^1.1.18",
     "@loadable/component": "^5.15.3",
     "@playwright/test": "1.26.1",
     "@types/fs-extra": "^11.0.1",
@@ -44,6 +46,7 @@
     "remark-mdx": "^2.3.0",
     "remark-stringify": "^10.0.3",
     "rollup": "^3.22.0",
+    "sass": "^1.63.3",
     "tsup": "^6.7.0",
     "tsx": "^3.12.7",
     "typescript": "^5.0.4",
