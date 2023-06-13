@@ -41,7 +41,7 @@ export const Nav = () => {
               <MenuItem {...item} key={item.text} />
             ))}
           </div>
-          <div>
+          <div flex="~">
             <SwitchAppearance />
           </div>
           <div className={styles.socialLinkIcon}>
