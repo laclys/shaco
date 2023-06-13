@@ -9,7 +9,7 @@ export const HomeLayout: FC = () => {
   return (
     <div>
       <HomeHero hero={frontmatter.hero} />
-      <HomeFeature feature={frontmatter.features} />
+      <HomeFeature features={frontmatter.features} />
     </div>
   )
 }
