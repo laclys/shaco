@@ -1,5 +1,6 @@
 import { usePageData } from '@runtime'
 import { NavItemWithLink } from 'shared/types'
+import { SwitchAppearance } from '../SwitchAppearance'
 
 import styles from './index.module.scss'
 
@@ -40,8 +41,9 @@ export const Nav = () => {
               <MenuItem {...item} key={item.text} />
             ))}
           </div>
-          {/* <div>主题切换按钮 todo~</div> */}
-          <div></div>
+          <div>
+            <SwitchAppearance />
+          </div>
           <div className={styles.socialLinkIcon}>
             <a href="/">
               <div className="i-carbon-logo-github w-5 h-5 fill-current"></div>
