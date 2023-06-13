@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { usePageData, Content } from '@runtime'
 import { useLocation } from 'react-router-dom'
 import { Sidebar } from '../../components/Sidebar'
+import { DocFooter } from '../../components/DocFooter'
 
 import styles from './index.module.scss'
 
@@ -23,6 +24,7 @@ export const DocLayout: FC = () => {
           <div className="shaco-doc">
             <Content />
           </div>
+          <DocFooter />
         </div>
       </div>
     </div>
