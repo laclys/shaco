@@ -1,0 +1,95 @@
+# 新一代全栈框架 Fresh
+
+大家好，我是三元。今天给大家介绍一个新的框架 Fresh，由 Deno 作者出品，在最近发布了 1.0 的正式版本，宣布支持了生产环境，并且在 Github 上热度也比较高，现在是时候给大家详细地介绍一下这个方案了。接下来会从**框架定位**、**上手体验**、**优劣势评估**和**源码实现**这几个方面来给大家深入解读 Fresh 框架。
+
+## 框架定位
+
+首先，从定位上来看，Fresh 属于 **Web 全栈开发框架**。是不是对于这个词非常眼熟呢？相信你已经想到了，像现在大名鼎鼎的 Next.js 以及新出的 Remix 都是走的这个路线。那么作为 Next.js 和 Remix 的竞品， Fresh 有哪些值得一提的亮点，或者说有哪些差异点呢？主要包括如下的几个方面:
+
+首先，Fresh 基于 Deno 运行时，由 Deno 原班人马开发，享有 Deno 一系列工具链和生态的优势，比如内置的测试工具、支持 http import 等等。
+
+其次是渲染性能方面，Fresh 整体采用 Islands 架构(之前介绍的 Astro 也是类似)，实现了客户端按需 Hydration，有一定的渲染性能优势。
+
+当然，还有一个比较出色的点是构建层做到了 Bundle-less，即应用代码不需要打包即可直接部署上线，后文会介绍这部分的具体实现。
+
+最后，不同于 Next.js 和 Remix，Fresh 的前端渲染层由 Preact 完成，包括 Islands 架构的实现也是基于 Preact，且不支持其它前端框架。
+
+## 上手体验
+
+在使用 Fresh 之前，需要在机器上先安装 Deno:
+
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1ded1a7d4fdb44429ef0a1bf7a43c636~tplv-k3u1fbpfcp-zoom-1.image)
+
+如何没有安装的话可以先去 Deno 官方安装一下: https://deno.land/。
+
+接下来可以输入如下的命令初始化项目:
+
+```ts
+deno run -A -r https://fresh.deno.dev my-project
+```
+
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/182e83f8877340b3ae35030aee6cd776~tplv-k3u1fbpfcp-zoom-1.image)
+
+项目的工程化脚本在 `deno.json` 文件中:
+
+```json
+{
+  "tasks": {
+    // -A 表示允许 Deno 读取环境变量
+    "start": "deno run -A --watch=static/,routes/ dev.ts"
+  },
+  "importMap": "./import_map.json"
+}
+```
+
+接下来你可以执行`deno task start` 命令启动项目:
+
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0162891907e2416e900c12d3309dfca5~tplv-k3u1fbpfcp-zoom-1.image)
+
+终端里面显示 Fresh 从文件目录中扫描出了 3 个路由和 1 个 island 组件，我们可以来观察一下项目的目录结构:
+
+```ts
+.
+├── README.md
+├── components
+│   └── Button.tsx
+├── deno.json
+├── dev.ts
+├── fresh.gen.ts
+├── import_map.json
+├── islands
+│   └── Counter.tsx
+├── main.ts
+├── routes
+│   ├── [name].tsx
+│   ├── api
+│   │   └── joke.ts
+│   └── index.tsx
+├── static
+│   ├── favicon.ico
+│   └── logo.svg
+└── utils
+    └── twind.ts
+```
+
+你可以关注 `routes` 和 `islands` 两个目录，`[name].tsx`、`api/joke.ts` 和 `index.tsx` 分别对应三个路由，而 islands 目录下的每个文件则对应一个 island 组件。
+
+而开发者并不需要手写路由文件，Fresh 可以自动地生成服务端的路由到文件的映射关系。很明显 Fresh 实现了约定式路由的功能，跟 Next.js 类似。
+
+每个 `island 组件`需要有一个 default 导出，用来将组件暴露出去，使用比较简单，就不展开介绍了。而`路由组件`则更加灵活，既可以作为一个 API 服务，也可以作为一个组件进行渲染。接下来，我们以脚手架项目的几个文件示例来分析一下。
+
+首先是 `api/joke.ts` 文件，这个文件的作用是提供服务端的数据接口，并不承载任何的前端渲染逻辑，你只需要在这个文件里面编写一个 handler 函数即可，如下代码所示:
+
+```ts
+// api/joke.ts
+import { HandlerContext } from '$fresh/server.ts';
+
+const JOKES = [
+  // 省略具体内容
+];
+
+export const handler = (_req: Request, _ctx: HandlerContext): Response => {
+  // 随机返回一个 joke 字符串
+  return new Response(body);
+};
+```

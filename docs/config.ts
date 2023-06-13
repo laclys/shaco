@@ -10,16 +10,20 @@ export default defineConfig({
     sidebar: {
       '/guide/': [
         {
-          text: '教程',
+          text: 'GUIDE',
           items: [
             {
-              text: '快速上手',
+              text: 'AAAA',
               link: '/guide/a'
             },
             {
-              text: '如何安装',
+              text: 'BBBB',
               link: '/guide/b'
-            }
+            },
+            {
+              text: 'CCCC',
+              link: '/guide/c'
+            },
           ]
         }
       ]
