@@ -1,6 +1,7 @@
 import { usePageData } from '@runtime'
 import { Nav } from '../components/Nav'
 import { HomeLayout } from './HomeLayout'
+import { DocLayout } from './DocLayout'
 
 import '../styles/base.css'
 import '../styles/vars.css'
@@ -14,7 +15,7 @@ export function Layout() {
     if (pageType === 'home') {
       return <HomeLayout />
     } else if (pageType === 'doc') {
-      return <div>Doc</div>
+      return <DocLayout />
     } else {
       return <div>404 page</div>
     }
