@@ -1,6 +1,6 @@
 import { Plugin } from 'vite'
 import { relative, join } from 'path'
-
+import sirv from 'sirv'
 import { SiteConfig } from 'shared/types/index'
 import { PACKAGE_ROOT } from 'node/constants'
 
@@ -51,6 +51,11 @@ export function pluginConfig(
         // restart Dev Server
         await restart()
       }
+    },
+    configureServer(server) {
+      const publicDir = join(config.root, 'public')
+      // sirv: https://github.com/lukeed/sirv(An optimized middleware & CLI application for serving static files~!)
+      server.middlewares.use(sirv(publicDir))
     }
   }
 }
