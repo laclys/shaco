@@ -2,12 +2,20 @@ import { FC } from 'react'
 import { Feature } from 'shared/types'
 
 export const HomeFeature: FC<{ features: Feature[] }> = ({ features }) => {
+  const featuresLen = features.length
+  let colNum = 3
+  if (featuresLen < 6) {
+    colNum = 2
+  }
+  if (featuresLen > 6 && !(featuresLen % 4)) {
+    colNum = 4
+  }
   return (
     <div className="max-w-1152px" m="auto" flex="~ wrap" justify="between">
       {features.map((f) => {
         const { icon, title, details } = f
         return (
-          <div key={title} border="rounded-md" p="r-4 b-4" w="1/3">
+          <div key={title} border="rounded-md" p="r-4 b-4" w={`1/${colNum}`}>
             <article
               bg="bg-soft"
               border="~ bg-soft solid rounded-xl"
