@@ -1,0 +1,405 @@
+/**
+ * Headings
+ * -------------------------------------------------------------------------- */
+
+ .shaco-doc h1,
+ .shaco-doc h2,
+ .shaco-doc h3,
+ .shaco-doc h4,
+ .shaco-doc h5,
+ .shaco-doc h6 {
+   position: relative;
+   font-weight: 600;
+   outline: none;
+ }
+ 
+ .shaco-doc h1 {
+   letter-spacing: -0.02em;
+   line-height: 40px;
+   font-size: 28px;
+   margin-bottom: 40px;
+ }
+ 
+ .shaco-doc h2 {
+   margin: 48px 0 16px;
+   /* padding-top: 24px; */
+   letter-spacing: -0.02em;
+   line-height: 32px;
+   font-size: 24px;
+ }
+ 
+ .shaco-doc h3 {
+   margin: 32px 0 0;
+   letter-spacing: -0.01em;
+   line-height: 28px;
+   font-size: 20px;
+ }
+ 
+ .shaco-doc .header-anchor {
+   float: left;
+   margin-left: -0.87em;
+   padding-right: 0.23em;
+   font-weight: 500;
+   opacity: 0;
+   transition: color 0.25s, opacity 0.25s;
+ }
+ 
+ .shaco-doc h1:hover .header-anchor,
+ .shaco-doc h1 .header-anchor:focus,
+ .shaco-doc h2:hover .header-anchor,
+ .shaco-doc h2 .header-anchor:focus,
+ .shaco-doc h3:hover .header-anchor,
+ .shaco-doc h3 .header-anchor:focus,
+ .shaco-doc h4:hover .header-anchor,
+ .shaco-doc h4 .header-anchor:focus,
+ .shaco-doc h5:hover .header-anchor,
+ .shaco-doc h5 .header-anchor:focus,
+ .shaco-doc h6:hover .header-anchor,
+ .shaco-doc h6 .header-anchor:focus {
+   opacity: 1;
+ }
+ 
+ @media (min-width: 768px) {
+   .shaco-doc h1 {
+     letter-spacing: -0.02em;
+     line-height: 40px;
+     font-size: 32px;
+   }
+ }
+ 
+ /**
+    * Paragraph and inline elements
+    * -------------------------------------------------------------------------- */
+ 
+ .shaco-doc p,
+ .shaco-doc summary {
+   margin: 16px 0;
+ }
+ 
+ .shaco-doc p {
+   z-index: 2;
+   line-height: 28px;
+ }
+ 
+ .shaco-doc blockquote {
+   margin: 16px 0;
+   border-left: 2px solid var(--shaco-c-divider);
+   padding-left: 16px;
+   transition: border-color 0.5s;
+ }
+ 
+ .shaco-doc blockquote > p {
+   margin: 0;
+   font-size: 16px;
+   color: var(--shaco-c-text-2);
+   transition: color 0.5s;
+ }
+ 
+ .shaco-doc a {
+   font-weight: 500;
+   color: var(--shaco-c-brand);
+   text-decoration-style: dotted;
+   transition: color 0.25s;
+ }
+ 
+ .shaco-doc a:hover {
+   color: var(--shaco-c-brand-dark);
+ }
+ 
+ .shaco-doc strong {
+   font-weight: 600;
+ }
+ 
+ /**
+    * Lists
+    * -------------------------------------------------------------------------- */
+ 
+ .shaco-doc ul,
+ .shaco-doc ol {
+   padding-left: 1.25rem;
+   margin: 16px 0;
+ }
+ 
+ .shaco-doc ul {
+   list-style: disc;
+ }
+ 
+ .shaco-doc ol {
+   list-style: decimal;
+ }
+ 
+ .shaco-doc li + li {
+   margin-top: 8px;
+ }
+ 
+ .shaco-doc li > ol,
+ .shaco-doc li > ul {
+   margin: 8px 0 0;
+ }
+ 
+ /**
+    * Table
+    * -------------------------------------------------------------------------- */
+ 
+ .shaco-doc table {
+   display: block;
+   border-collapse: collapse;
+   margin: 20px 0;
+   overflow-x: auto;
+ }
+ 
+ .shaco-doc tr {
+   border-top: 1px solid var(--shaco-c-divider);
+   transition: background-color 0.5s;
+ }
+ 
+ .shaco-doc tr:nth-child(2n) {
+   background-color: var(--shaco-c-bg-soft);
+ }
+ 
+ .shaco-doc th,
+ .shaco-doc td {
+   border: 1px solid var(--shaco-c-divider);
+   padding: 12px 16px;
+ }
+ 
+ .shaco-doc th {
+   font-size: 16px;
+   font-weight: 600;
+   background-color: var(--shaco-c-white-soft);
+ }
+ 
+ .dark .shaco-doc th {
+   background-color: var(--shaco-c-black);
+ }
+ 
+ /**
+    * Decorational elements
+    * -------------------------------------------------------------------------- */
+ 
+ .shaco-doc hr {
+   margin: 16px 0;
+   border: none;
+   border-top: 1px solid var(--shaco-c-divider-light);
+ }
+ 
+ /**
+    * Custom Block
+    * -------------------------------------------------------------------------- */
+ 
+ .shaco-doc .custom-block {
+   margin: 16px 0;
+ }
+ 
+ .shaco-doc .custom-block p {
+   margin: 8px 0;
+   line-height: 24px;
+ }
+ 
+ .shaco-doc .custom-block p:first-child {
+   margin: 0;
+ }
+ 
+ .shaco-doc .custom-block a {
+   color: inherit;
+   font-weight: 600;
+   text-decoration: underline;
+   transition: opacity 0.25s;
+ }
+ 
+ .shaco-doc .custom-block a:hover {
+   opacity: 0.6;
+ }
+ 
+ .shaco-doc .custom-block code {
+   font-size: var(--shaco-custom-block-code-font-size);
+   font-weight: 700;
+   color: inherit;
+ }
+ 
+ .shaco-doc .custom-block div[class*='language-'] {
+   margin: 8px 0;
+ }
+ 
+ .shaco-doc .custom-block div[class*='language-'] code {
+   font-weight: 400;
+   background-color: transparent;
+ }
+ 
+ /**
+    * Code
+    * -------------------------------------------------------------------------- */
+ 
+ /* inline code */
+ .shaco-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
+   font-size: var(--shaco-code-font-size);
+ }
+ 
+ .shaco-doc :not(pre, div) > code {
+   border-radius: 4px;
+   padding: 3px 6px;
+   color: var(--shaco-c-text-code);
+   background-color: var(--shaco-c-bg-mute);
+   transition: color 0.5s, background-color 0.5s;
+ }
+ 
+ .shaco-doc h1 > code,
+ .shaco-doc h2 > code,
+ .shaco-doc h3 > code {
+   font-size: 0.9em;
+ }
+ 
+ .shaco-doc a > code {
+   color: var(--shaco-c-brand);
+   transition: color 0.25s;
+ }
+ 
+ .shaco-doc a:hover > code {
+   color: var(--shaco-c-brand-dark);
+ }
+ 
+ .shaco-doc div[class*='language-'] {
+   position: relative;
+   margin: 16px -24px;
+   background-color: var(--shaco-code-block-bg);
+   overflow-x: auto;
+   transition: background-color 0.5s;
+ }
+ 
+ @media (min-width: 640px) {
+   .shaco-doc div[class*='language-'] {
+     border-radius: 8px;
+     margin: 16px 0;
+   }
+ }
+ 
+ @media (max-width: 639px) {
+   .shaco-doc li div[class*='language-'] {
+     border-radius: 8px 0 0 8px;
+   }
+ }
+ 
+ .shaco-doc div[class*='language-'] + div[class*='language-'],
+ .shaco-doc div[class$='-api'] + div[class*='language-'],
+ .shaco-doc
+   div[class*='language-']
+   + div[class$='-api']
+   > div[class*='language-'] {
+   margin-top: -8px;
+ }
+ 
+ .shaco-doc [class*='language-'] pre,
+ .shaco-doc [class*='language-'] code {
+   text-align: left;
+   white-space: pre;
+   word-spacing: normal;
+   word-break: normal;
+   word-wrap: normal;
+   -moz-tab-size: 4;
+   -o-tab-size: 4;
+   tab-size: 4;
+   -webkit-hyphens: none;
+   -moz-hyphens: none;
+   -ms-hyphens: none;
+   hyphens: none;
+ }
+ 
+ .shaco-doc [class*='language-'] pre {
+   position: relative;
+   z-index: 1;
+   margin: 0;
+   padding: 16px 0;
+   background: transparent;
+   overflow-x: auto;
+ }
+ 
+ .shaco-doc [class*='language-'] code {
+   display: block;
+   padding: 0 24px;
+   width: fit-content;
+   min-width: 100%;
+   line-height: var(--shaco-code-line-height);
+   font-size: var(--shaco-code-font-size);
+   color: var(--shaco-code-block-color);
+   transition: color 0.5s;
+ }
+ 
+ .shaco-doc [class*='language-'] code .highlighted {
+   background-color: var(--shaco-code-line-highlight-color);
+   transition: background-color 0.5s;
+   margin: 0 -24px;
+   padding: 0 24px;
+   width: calc(100% + 2 * 24px);
+   display: inline-block;
+ }
+ 
+ .shaco-doc [class*='language-'] > button.copy {
+   position: absolute;
+   top: 8px;
+   right: 8px;
+   z-index: 3;
+   display: block;
+   justify-content: center;
+   align-items: center;
+   border-radius: 4px;
+   width: 40px;
+   height: 40px;
+   background-color: var(--shaco-code-block-bg);
+   opacity: 0;
+   cursor: pointer;
+   background-image: var(--shaco-icon-copy);
+   background-position: 50%;
+   background-size: 20px;
+   background-repeat: no-repeat;
+   transition: opacity 0.4s;
+ }
+ 
+ .shaco-doc [class*='language-']:hover > button.copy,
+ .shaco-doc [class*='language-'] > button.copy:focus {
+   opacity: 1;
+ }
+ 
+ .shaco-doc [class*='language-'] > button.copy:hover {
+   background-color: var(--shaco-code-copy-code-hover-bg);
+ }
+ 
+ .shaco-doc [class*='language-'] > button.copy.copied,
+ .shaco-doc [class*='language-'] > button.copy:hover.copied {
+   border-radius: 0 4px 4px 0;
+   background-color: var(--shaco-code-copy-code-hover-bg);
+   background-image: var(--shaco-icon-copied);
+ }
+ 
+ .shaco-doc [class*='language-'] > button.copy.copied::before,
+ .shaco-doc [class*='language-'] > button.copy:hover.copied::before {
+   position: relative;
+   left: -65px;
+   display: block;
+   border-radius: 4px 0 0 4px;
+   padding-top: 8px;
+   width: 64px;
+   height: 40px;
+   text-align: center;
+   font-size: 12px;
+   font-weight: 500;
+   color: var(--shaco-code-copy-code-active-text);
+   background-color: var(--shaco-code-copy-code-hover-bg);
+   white-space: nowrap;
+   content: 'Copied';
+ }
+ 
+ .shaco-doc [class*='language-'] > span.lang {
+   position: absolute;
+   top: 6px;
+   right: 12px;
+   z-index: 2;
+   font-size: 12px;
+   font-weight: 500;
+   color: var(--shaco-c-text-dark-3);
+   transition: color 0.4s, opacity 0.4s;
+ }
+ 
+ .shaco-doc [class*='language-']:hover > button.copy + span.lang,
+ .shaco-doc [class*='language-'] > button.copy:focus + span.lang {
+   opacity: 0;
+ }

@@ -5,6 +5,7 @@ import { DocLayout } from './DocLayout'
 
 import '../styles/base.css'
 import '../styles/vars.css'
+import '../styles/doc.css'
 import 'uno.css'
 
 export function Layout() {
@@ -23,7 +24,13 @@ export function Layout() {
   return (
     <div>
       <Nav />
-      {getContent()}
+      <section
+        style={{
+          paddingTop: 'var(--shaco-nav-height)'
+        }}
+      >
+        {getContent()}
+      </section>
     </div>
   )
 }
