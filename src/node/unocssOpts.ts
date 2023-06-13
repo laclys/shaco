@@ -13,6 +13,17 @@ const options: VitePluginConfig = {
       ([, w]) => ({
         [`border-${w}`]: '1px solid var(--shaco-c-divider-light)'
       })
+    ],
+    [
+      'menu-item-before',
+      {
+        'margin-right': '12px',
+        'margin-left': '12px',
+        width: '1px',
+        height: '24px',
+        'background-color': 'var(--shaco-c-divider-light)',
+        content: '" "'
+      }
     ]
   ]
 }

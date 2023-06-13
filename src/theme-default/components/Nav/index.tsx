@@ -41,10 +41,10 @@ export const Nav = () => {
               <MenuItem {...item} key={item.text} />
             ))}
           </div>
-          <div flex="~">
+          <div before="menu-item-before" flex="~">
             <SwitchAppearance />
           </div>
-          <div className={styles.socialLinkIcon}>
+          <div className={styles.socialLinkIcon} before="menu-item-before">
             <a href="/">
               <div className="i-carbon-logo-github w-5 h-5 fill-current"></div>
             </a>
