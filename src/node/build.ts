@@ -17,7 +17,7 @@ export async function bundle(root: string, config: SiteConfig) {
         root,
         ssr: {
           // 直接打到产物中
-          noExternal: ['react-router-dom']
+          noExternal: ['react-router-dom', 'lodash-es'] // ssr产物都是Cjs的
         },
         plugins: await createVitePlugins(config, undefined, isServer),
         build: {
@@ -63,7 +63,7 @@ export async function renderPage(
   await Promise.all(
     routes.map(async (route) => {
       const routePath = route.path
-      const appHtml = render(routePath)
+      const appHtml = await render(routePath)
       const html = `
       <!DOCTYPE html>
       <html>
