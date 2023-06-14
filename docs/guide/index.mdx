@@ -1,6 +1,6 @@
 # 具体方案：
 
-### 开发脚本 整体生成 WEBP图片(Eg.: 项目中a.png，再生成一份a.png.webp)
+### 开发脚本
 
 Shell脚本(需安装：brew install webp)(https://developers.google.com/speed/webp/docs/cwebp)
 
@@ -24,7 +24,7 @@ Usage:
 <pnpm | npm | yarn> run cwebp <directory>
 ```
 
-### 判断浏览器是否支持WEBP，如支持使用WEBP格式图片，不支持使用原图 (Ref:https://caniuse.com/webp).如支持根节点添加标识: `<html class="webpa">...</html>`
+### 判断浏览器
 ```javascript
 const isWebp = document.createElement("canvas").toDataURL("image/webp").includes("data:image/webp");
 const htmDom = document.documentElement;
