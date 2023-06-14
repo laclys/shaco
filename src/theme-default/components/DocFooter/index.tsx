@@ -10,7 +10,7 @@ export function DocFooter() {
         <div flex="~ col" className={styles.prev}>
           {prevPage && (
             <a href={prevPage.link} className={styles.pagerLink}>
-              <span className={styles.desc}>上一页</span>
+              <span className={styles.desc}>Prev</span>
               <span className={styles.title}>{prevPage.text}</span>
             </a>
           )}
@@ -21,7 +21,7 @@ export function DocFooter() {
               href={nextPage.link}
               className={`${styles.pagerLink} ${styles.next}`}
             >
-              <span className={styles.desc}>下一页</span>
+              <span className={styles.desc}>Next</span>
               <span className={styles.title}>{nextPage.text}</span>
             </a>
           )}

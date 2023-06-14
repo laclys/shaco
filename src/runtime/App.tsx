@@ -14,11 +14,13 @@ export async function initPageData(routePath: string): Promise<PageData> {
     console.log('route', route)
     const moduleInfo = await route.preload()
     console.log('moduleInfo', moduleInfo)
+    console.log('moduleInfo.toc', moduleInfo.toc)
     return {
       pageType: moduleInfo.frontmatter?.pageType ?? 'doc',
       siteData,
       frontmatter: moduleInfo.frontmatter,
-      pagePath: routePath
+      pagePath: routePath,
+      toc: moduleInfo.toc
     }
   }
   // 404 page data
