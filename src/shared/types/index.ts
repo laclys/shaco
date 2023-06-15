@@ -96,3 +96,7 @@ export interface PageModule {
   [key: string]: unknown
   toc?: Header[]
 }
+
+export interface PropsWithIsland {
+  __island?: boolean
+}
