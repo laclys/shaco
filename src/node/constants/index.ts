@@ -17,3 +17,5 @@ export const SERVER_ENTRY_PATH = path.join(
   'runtime',
   'ssr-entry.tsx'
 )
+
+export const MASK_SPLITTER = '!!ISLAND!!'
