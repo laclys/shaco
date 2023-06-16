@@ -86,6 +86,9 @@ window.ISLAND_PROPS = JSON.parse(
   const injectId = 'shaco:inject'
   return viteBuild({
     mode: 'production',
+    esbuild: {
+      jsx: 'automatic'
+    },
     build: {
       // 输出目录
       outDir: path.join(root, '.temp'),
