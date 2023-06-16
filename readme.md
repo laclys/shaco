@@ -21,5 +21,5 @@ shaco preview [dir]
 shaco build [dir]
 
 ```
-
+![](demo.jpg)
 Have fun!
