@@ -32,7 +32,7 @@ export const Nav = () => {
             className="w-full bg-light-50h-fill text-1rem font-semibold flex items-center"
             hover="opacity-60"
           >
-            title
+            Bilibili
           </a>
         </div>
         <div flex="~">
