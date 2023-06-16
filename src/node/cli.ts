@@ -1,5 +1,7 @@
 import cac from 'cac'
+import { resolve } from 'path'
 import { build } from './build'
+import { preview } from './preview'
 import { resolveConfig } from './config'
 
 const cli = cac('shaco').version('0.0.1').help()
@@ -21,5 +23,17 @@ cli.command('build [root]', 'build in prod').action(async (root: string) => {
   const config = await resolveConfig(root, 'build', 'production')
   await build(root, config)
 })
+
+cli
+  .command('preview [root]', 'preview production build')
+  .option('--port <port>', 'port to use for preview server')
+  .action(async (root: string, { port }: { port: number }) => {
+    try {
+      root = resolve(root)
+      await preview(root, { port })
+    } catch (e) {
+      console.log(e)
+    }
+  })
 
 cli.parse()
