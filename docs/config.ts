@@ -4,24 +4,24 @@ export default defineConfig({
   title: "xxx",
   themeConfig: {
     nav: [
-      { text: "主页", link: "/" },
-      { text: "指南", link: "/guide/" },
+      { text: "Index", link: "/" },
+      { text: "Introduction", link: "/guide/" },
     ],
     sidebar: {
       '/guide/': [
         {
-          text: 'GUIDE',
+          text: 'Introduction',
           items: [
             {
-              text: 'AAAA',
+              text: 'Touma Kamijou',
               link: '/guide/a'
             },
             {
-              text: 'BBBB',
+              text: 'Uiharu Kazari',
               link: '/guide/b'
             },
             {
-              text: 'CCCC',
+              text: 'Misaka Imouto',
               link: '/guide/c'
             },
           ]

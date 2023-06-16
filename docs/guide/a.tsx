@@ -1,7 +1,7 @@
 export default function A() {
   return (
     <div>
-      <h1>AAAAAAA</h1>
+      <h1>Touma Kamijou</h1>
     </div>
   );
 }
