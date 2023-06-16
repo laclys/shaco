@@ -3,6 +3,7 @@ node_modules
 dist
 build
 .temp
+vendors
 
 # misc
 .DS_Store

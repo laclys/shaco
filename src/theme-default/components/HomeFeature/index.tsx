@@ -15,7 +15,7 @@ export const HomeFeature: FC<{ features: Feature[] }> = ({ features }) => {
       {features.map((f) => {
         const { icon, title, details } = f
         return (
-          <div key={title} border="rounded-md" p="r-4 b-4" w={`1/${colNum}`}>
+          <div key={title} border="rounded-md" p="r-4 b-4" w="1/3">
             <article
               bg="bg-soft"
               border="~ bg-soft solid rounded-xl"
