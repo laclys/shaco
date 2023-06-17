@@ -1,8 +1,10 @@
 {
   "name": "shaco",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Vite SSG framework based on islands arch",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "husky install",
     "build": "tsup && pnpm build:deps",
@@ -24,9 +26,17 @@
       "eslint --fix"
     ]
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["vite", "ssg"],
+  "author": "Lac",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "src/runtime",
+    "src/theme-default",
+    "src/shared"
+  ],
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.18",
     "@loadable/component": "^5.15.3",

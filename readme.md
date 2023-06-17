@@ -2,6 +2,16 @@
 
 A static site generator(Base on Vite)
 
+### Usage
+
+```bash
+shaco dev [dir]
+## preview
+shaco preview [dir]
+## build
+shaco build [dir]
+```
+
 ### Dev
 
 ```bash
@@ -18,8 +28,10 @@ pnpm test:unit
 # test:e2e
 pnpm test:e2e
 
-# usage
-## dev
+# release
+pnpm release [--dry]
+
+# run
 shaco dev [dir]
 ## preview
 shaco preview [dir]
@@ -27,9 +39,11 @@ shaco preview [dir]
 shaco build [dir]
 
 ```
+
 ![](demo.jpg)
 
 ---
+
 unit test ✅
 ![](./test-passed/unit.png)
 
