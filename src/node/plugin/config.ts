@@ -3,6 +3,7 @@ import { relative, join } from 'path'
 import sirv from 'sirv'
 import { SiteConfig } from 'shared/types/index'
 import { PACKAGE_ROOT } from 'node/constants'
+import fs from 'fs-extra'
 
 const SITE_DATA_ID = 'shaco:site-data'
 
@@ -54,8 +55,10 @@ export function pluginConfig(
     },
     configureServer(server) {
       const publicDir = join(config.root, 'public')
-      // sirv: https://github.com/lukeed/sirv(An optimized middleware & CLI application for serving static files~!)
-      server.middlewares.use(sirv(publicDir))
+      if (fs.existsSync(publicDir)) {
+        // sirv: https://github.com/lukeed/sirv(An optimized middleware & CLI application for serving static files~!)
+        server.middlewares.use(sirv(publicDir))
+      }
     }
   }
 }

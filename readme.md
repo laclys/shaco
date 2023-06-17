@@ -9,8 +9,14 @@ pnpm i
 
 npm link
 
-# de/compiler
+# compiler
 pnpm run start
+
+# test:unit
+pnpm test:unit
+
+# test:e2e
+pnpm test:e2e
 
 # usage
 ## dev
@@ -22,4 +28,13 @@ shaco build [dir]
 
 ```
 ![](demo.jpg)
+
+---
+unit test ✅
+![](./test-passed/unit.png)
+
+e2e test ✅
+
+![](./test-passed/e2e.png)
+
 Have fun!
