@@ -1,27 +1,89 @@
 <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width,initial-scale=1">
-          <title data-rh="true"></title>
-          
-          
-          
-          <meta name="description" content="xxx">
-            <link rel="stylesheet" href="/assets/client-entry-12d5d268.css">
-            <script type="importmap">
-              {
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-rh="true"></title>
+
+
+
+  <meta name="description" content="xxx">
+  <link rel="stylesheet" href="/shaco/build/assets/client-entry-12d5d268.css">
+  <script type="importmap">
+    {
                 "imports": {
-                  "react": "/react.js","react-dom": "/react-dom.js","react-dom/client": "/react-dom_client.js","react/jsx-runtime": "/react_jsx-runtime.js"
+                  "react": "/shaco/build/react.js","react-dom": "/shaco/build/react-dom.js","react-dom/client": "/shaco/build/react-dom_client.js","react/jsx-runtime": "/shaco/build/react_jsx-runtime.js"
                 }
               }
             </script>
-        </head>
-        <body>
-          <div id="root"><div><header fixed="~" pos="t-0 l-0" w="full" z="10"><div flex="~" items="center" justify="between" class="h-14 divider-bottom _nav_g92t3_22"><div><a href="/" class="w-full bg-light-50h-fill text-1rem font-semibold flex items-center" hover="opacity-60">Bilibili</a></div><div flex="~"><div flex="~"><div class="text-sm font-medium mx-3"><a href="/" class="_link_g92t3_1">Index</a></div><div class="text-sm font-medium mx-3"><a href="/guide/" class="_link_g92t3_1">Introduction</a></div></div><div before="menu-item-before" flex="~"><button class="_switch_1w6z8_1 undefined" id="" type="button" role="switch"><span class="_check_1w6z8_17"><span class="_icon_1w6z8_34"><div class="_sun_1w6z8_57"><div class="i-carbon-sun" w="full" h="full"></div></div><div class="_moon_1w6z8_61"><div class="i-carbon-moon" w="full" h="full"></div></div></span></span></button></div><div class="_social-link-icon_g92t3_12" before="menu-item-before"><a href="/"><div class="i-carbon-logo-github w-5 h-5 fill-current"></div></a></div></div></div></header><section style="padding-top:var(--shaco-nav-height)"><div><aside class="_sidebar_uiq2m_1"><nav></nav></aside><div class="_content_4g85r_1" flex="~"><div class="_doc-content_4g85r_8"><div class="shaco-doc"><div>Hello, route B</div></div><footer mt="8"><div flex="~" gap="2" divider-top="~" pt="6"><div flex="~ col" class="_prev_7uiky_1"></div><div flex="~ col" class="_next_7uiky_2"><a href="/guide/a" class="_pager-link_7uiky_6 _next_7uiky_2"><span class="_desc_7uiky_29">Next</span><span class="_title_7uiky_20">Touma Kamijou</span></a></div></div></footer></div><div class="_aside-container_4g85r_14"><div __island="Aside:0"><div flex="~ col 1" style="width:var(--shaco-aside-width)"><div></div></div></div></div></div></div></section></div></div>
-          <script type="module">import{jsx as p,jsxs as _}from"react/jsx-runtime";import{useState as G,useEffect as $}from"react";var M=typeof global=="object"&&global&&global.Object===Object&&global;const D=M;var F=typeof self=="object"&&self&&self.Object===Object&&self,U=D||F||Function("return this")();const B=U;var q=B.Symbol;const v=q;var H=Object.prototype,X=H.hasOwnProperty,Y=H.toString,y=v?v.toStringTag:void 0;function z(e){var t=X.call(e,y),r=e[y];try{e[y]=void 0;var i=!0}catch{}var l=Y.call(e);return i&&(t?e[y]=r:delete e[y]),l}var J=Object.prototype,V=J.toString;function K(e){return V.call(e)}var Q="[object Null]",Z="[object Undefined]",A=v?v.toStringTag:void 0;function ee(e){return e==null?e===void 0?Z:Q:A&&A in Object(e)?z(e):K(e)}function te(e){return e!=null&&typeof e=="object"}var ne="[object Symbol]";function re(e){return typeof e=="symbol"||te(e)&&ee(e)==ne}var ie=/\s/;function oe(e){for(var t=e.length;t--&&ie.test(e.charAt(t)););return t}var ce=/^\s+/;function ae(e){return e&&e.slice(0,oe(e)+1).replace(ce,"")}function x(e){var t=typeof e;return e!=null&&(t=="object"||t=="function")}var N=0/0,le=/^[-+]0x[0-9a-f]+$/i,se=/^0b[01]+$/i,de=/^0o[0-7]+$/i,fe=parseInt;function L(e){if(typeof e=="number")return e;if(re(e))return N;if(x(e)){var t=typeof e.valueOf=="function"?e.valueOf():e;e=x(t)?t+"":t}if(typeof e!="string")return e===0?e:+e;e=ae(e);var r=se.test(e);return r||de.test(e)?fe(e.slice(2),r?2:8):le.test(e)?N:+e}var ue=function(){return B.Date.now()};const w=ue;var me="Expected a function",ge=Math.max,pe=Math.min;function be(e,t,r){var i,l,c,s,n,a,d=0,m=!1,f=!1,b=!0;if(typeof e!="function")throw new TypeError(me);t=L(t)||0,x(r)&&(m=!!r.leading,f="maxWait"in r,c=f?ge(L(r.maxWait)||0,t):c,b="trailing"in r?!!r.trailing:b);function S(o){var g=i,h=l;return i=l=void 0,d=o,s=e.apply(h,g),s}function C(o){return d=o,n=setTimeout(T,t),m?S(o):s}function R(o){var g=o-a,h=o-d,k=t-g;return f?pe(k,c-h):k}function j(o){var g=o-a,h=o-d;return a===void 0||g>=t||g<0||f&&h>=c}function T(){var o=w();if(j(o))return O(o);n=setTimeout(T,R(o))}function O(o){return n=void 0,b&&i?S(o):(i=l=void 0,s)}function P(){n!==void 0&&clearTimeout(n),d=0,i=a=l=n=void 0}function W(){return n===void 0?s:O(w())}function E(){var o=w(),g=j(o);if(i=arguments,l=this,a=o,g){if(n===void 0)return C(a);if(f)return clearTimeout(n),n=setTimeout(T,t),S(a)}return n===void 0&&(n=setTimeout(T,t)),s}return E.cancel=P,E.flush=W,E}var he="Expected a function";function ye(e,t,r){var i=!0,l=!0;if(typeof e!="function")throw new TypeError(he);return x(r)&&(i="leading"in r?!!r.leading:i,l="trailing"in r?!!r.trailing:l),be(e,t,{leading:i,maxWait:t,trailing:l})}let u=[];const I=56;function Te(e,t){console.log("123");const r=parseInt(window.getComputedStyle(e).paddingTop,10),i=window.scrollY+e.getBoundingClientRect().top+r-I;window.scrollTo({left:0,top:i,behavior:t?"smooth":"auto"})}function ve(){const e=document.getElementById("aside-marker"),t=document.getElementById("aside-container"),r=Array.from((t==null?void 0:t.getElementsByTagName("a"))||[]).map(s=>decodeURIComponent(s.hash));if(!t)return;const i=(s,n)=>{if(s[n]){const a=s[n].getAttribute("href"),d=r.findIndex(f=>f===a);(t==null?void 0:t.querySelector(`a[href="#${a.slice(1)}"]`))&&(e.style.top=`${33+d*28}px`,e.style.opacity="1")}},c=ye(()=>{if(u=Array.from(document.querySelectorAll(".shaco-doc .header-anchor")).filter(n=>{var a;return((a=n.parentElement)==null?void 0:a.tagName)!=="H1"}),document.documentElement.scrollTop+window.innerHeight>=document.documentElement.scrollHeight){i(u,u.length-1);return}for(let n=0;n<u.length;n++){const a=u[n],d=u[n+1],m=Math.ceil(window.scrollY),f=a.parentElement.offsetTop-I;if(!d){i(u,n);break}if(n===0&&m<f||m==0){i(u,0);break}const b=d.parentElement.offsetTop-I;if(m>=f&&m<b){i(u,n);break}}},100);return window.addEventListener("scroll",c),()=>{window.removeEventListener("scroll",c)}}function xe(e){const[t,r]=G(e);return $(()=>{}),t}function Se(e){const{headers:t=[]}=e,r=xe(t),i=r.length>0;$(()=>{const c=ve();return()=>{c()}},[]);const l=c=>p("li",{children:p("a",{href:`#${c.id}`,className:"block leading-7 text-text-2 hover:text-text-1",transition:"color duration-300",style:{paddingLeft:(c.depth-2)*12},onClick:s=>{console.log("header.id",c.id),s.preventDefault();const n=document.getElementById(c.id);n&&Te(n,!1)},children:c.text})},c.id);return p("div",{flex:"~ col 1",style:{width:"var(--shaco-aside-width)"},children:p("div",{children:i&&_("div",{id:"aside-container",className:"relative divider-left pl-4 text-13px font-medium",children:[p("div",{id:"aside-marker",className:"absolute top-33px opacity-0 w-1px h-18px bg-brand",style:{left:"-1px",transition:"top 0.25s cubic-bezier(0, 1, 0.5, 1), background-color 0.5s, opacity 0.25s"}}),p("div",{"leading-7":"~",text:"13px",font:"semibold",children:"ON THIS PAGE"}),p("nav",{children:p("ul",{relative:"~",children:r.map(l)})})]})})})}window.ISLANDS={Aside:Se};window.ISLAND_PROPS=JSON.parse(document.getElementById("island-props").textContent);
+</head>
+
+<body>
+  <div id="root">
+    <div>
+      <header fixed="~" pos="t-0 l-0" w="full" z="10">
+        <div flex="~" items="center" justify="between" class="h-14 divider-bottom _nav_g92t3_22">
+          <div><a href="/shaco/build/" class="w-full bg-light-50h-fill text-1rem font-semibold flex items-center"
+              hover="opacity-60">Bilibili</a></div>
+          <div flex="~">
+            <div flex="~">
+              <div class="text-sm font-medium mx-3"><a href="/shaco/build/" class="_link_g92t3_1">Index</a></div>
+              <div class="text-sm font-medium mx-3"><a href="/shaco/build/guide/" class="_link_g92t3_1">Introduction</a>
+              </div>
+            </div>
+            <div before="menu-item-before" flex="~"><button class="_switch_1w6z8_1 undefined" id="" type="button"
+                role="switch"><span class="_check_1w6z8_17"><span class="_icon_1w6z8_34">
+                    <div class="_sun_1w6z8_57">
+                      <div class="i-carbon-sun" w="full" h="full"></div>
+                    </div>
+                    <div class="_moon_1w6z8_61">
+                      <div class="i-carbon-moon" w="full" h="full"></div>
+                    </div>
+                  </span></span></button></div>
+            <div class="_social-link-icon_g92t3_12" before="menu-item-before"><a href="/shaco/build/">
+                <div class="i-carbon-logo-github w-5 h-5 fill-current"></div>
+              </a></div>
+          </div>
+        </div>
+      </header>
+      <section style="padding-top:var(--shaco-nav-height)">
+        <div>
+          <aside class="_sidebar_uiq2m_1">
+            <nav></nav>
+          </aside>
+          <div class="_content_4g85r_1" flex="~">
+            <div class="_doc-content_4g85r_8">
+              <div class="shaco-doc">
+                <div>Hello, route B</div>
+              </div>
+              <footer mt="8">
+                <div flex="~" gap="2" divider-top="~" pt="6">
+                  <div flex="~ col" class="_prev_7uiky_1"></div>
+                  <div flex="~ col" class="_next_7uiky_2"><a href="/shaco/build/guide/a"
+                      class="_pager-link_7uiky_6 _next_7uiky_2"><span class="_desc_7uiky_29">Next</span><span
+                        class="_title_7uiky_20">Touma Kamijou</span></a></div>
+                </div>
+              </footer>
+            </div>
+            <div class="_aside-container_4g85r_14">
+              <div __island="Aside:0">
+                <div flex="~ col 1" style="width:var(--shaco-aside-width)">
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script type="module">import{jsx as p,jsxs as _}from"react/jsx-runtime";import{useState as G,useEffect as $}from"react";var M=typeof global=="object"&&global&&global.Object===Object&&global;const D=M;var F=typeof self=="object"&&self&&self.Object===Object&&self,U=D||F||Function("return this")();const B=U;var q=B.Symbol;const v=q;var H=Object.prototype,X=H.hasOwnProperty,Y=H.toString,y=v?v.toStringTag:void 0;function z(e){var t=X.call(e,y),r=e[y];try{e[y]=void 0;var i=!0}catch{}var l=Y.call(e);return i&&(t?e[y]=r:delete e[y]),l}var J=Object.prototype,V=J.toString;function K(e){return V.call(e)}var Q="[object Null]",Z="[object Undefined]",A=v?v.toStringTag:void 0;function ee(e){return e==null?e===void 0?Z:Q:A&&A in Object(e)?z(e):K(e)}function te(e){return e!=null&&typeof e=="object"}var ne="[object Symbol]";function re(e){return typeof e=="symbol"||te(e)&&ee(e)==ne}var ie=/\s/;function oe(e){for(var t=e.length;t--&&ie.test(e.charAt(t)););return t}var ce=/^\s+/;function ae(e){return e&&e.slice(0,oe(e)+1).replace(ce,"")}function x(e){var t=typeof e;return e!=null&&(t=="object"||t=="function")}var N=0/0,le=/^[-+]0x[0-9a-f]+$/i,se=/^0b[01]+$/i,de=/^0o[0-7]+$/i,fe=parseInt;function L(e){if(typeof e=="number")return e;if(re(e))return N;if(x(e)){var t=typeof e.valueOf=="function"?e.valueOf():e;e=x(t)?t+"":t}if(typeof e!="string")return e===0?e:+e;e=ae(e);var r=se.test(e);return r||de.test(e)?fe(e.slice(2),r?2:8):le.test(e)?N:+e}var ue=function(){return B.Date.now()};const w=ue;var me="Expected a function",ge=Math.max,pe=Math.min;function be(e,t,r){var i,l,c,s,n,a,d=0,m=!1,f=!1,b=!0;if(typeof e!="function")throw new TypeError(me);t=L(t)||0,x(r)&&(m=!!r.leading,f="maxWait"in r,c=f?ge(L(r.maxWait)||0,t):c,b="trailing"in r?!!r.trailing:b);function S(o){var g=i,h=l;return i=l=void 0,d=o,s=e.apply(h,g),s}function C(o){return d=o,n=setTimeout(T,t),m?S(o):s}function R(o){var g=o-a,h=o-d,k=t-g;return f?pe(k,c-h):k}function j(o){var g=o-a,h=o-d;return a===void 0||g>=t||g<0||f&&h>=c}function T(){var o=w();if(j(o))return O(o);n=setTimeout(T,R(o))}function O(o){return n=void 0,b&&i?S(o):(i=l=void 0,s)}function P(){n!==void 0&&clearTimeout(n),d=0,i=a=l=n=void 0}function W(){return n===void 0?s:O(w())}function E(){var o=w(),g=j(o);if(i=arguments,l=this,a=o,g){if(n===void 0)return C(a);if(f)return clearTimeout(n),n=setTimeout(T,t),S(a)}return n===void 0&&(n=setTimeout(T,t)),s}return E.cancel=P,E.flush=W,E}var he="Expected a function";function ye(e,t,r){var i=!0,l=!0;if(typeof e!="function")throw new TypeError(he);return x(r)&&(i="leading"in r?!!r.leading:i,l="trailing"in r?!!r.trailing:l),be(e,t,{leading:i,maxWait:t,trailing:l})}let u=[];const I=56;function Te(e,t){console.log("123");const r=parseInt(window.getComputedStyle(e).paddingTop,10),i=window.scrollY+e.getBoundingClientRect().top+r-I;window.scrollTo({left:0,top:i,behavior:t?"smooth":"auto"})}function ve(){const e=document.getElementById("aside-marker"),t=document.getElementById("aside-container"),r=Array.from((t==null?void 0:t.getElementsByTagName("a"))||[]).map(s=>decodeURIComponent(s.hash));if(!t)return;const i=(s,n)=>{if(s[n]){const a=s[n].getAttribute("href"),d=r.findIndex(f=>f===a);(t==null?void 0:t.querySelector(`a[href="#${a.slice(1)}"]`))&&(e.style.top=`${33+d*28}px`,e.style.opacity="1")}},c=ye(()=>{if(u=Array.from(document.querySelectorAll(".shaco-doc .header-anchor")).filter(n=>{var a;return((a=n.parentElement)==null?void 0:a.tagName)!=="H1"}),document.documentElement.scrollTop+window.innerHeight>=document.documentElement.scrollHeight){i(u,u.length-1);return}for(let n=0;n<u.length;n++){const a=u[n],d=u[n+1],m=Math.ceil(window.scrollY),f=a.parentElement.offsetTop-I;if(!d){i(u,n);break}if(n===0&&m<f||m==0){i(u,0);break}const b=d.parentElement.offsetTop-I;if(m>=f&&m<b){i(u,n);break}}},100);return window.addEventListener("scroll",c),()=>{window.removeEventListener("scroll",c)}}function xe(e){const[t,r]=G(e);return $(()=>{}),t}function Se(e){const{headers:t=[]}=e,r=xe(t),i=r.length>0;$(()=>{const c=ve();return()=>{c()}},[]);const l=c=>p("li",{children:p("a",{href:`#${c.id}`,className:"block leading-7 text-text-2 hover:text-text-1",transition:"color duration-300",style:{paddingLeft:(c.depth-2)*12},onClick:s=>{console.log("header.id",c.id),s.preventDefault();const n=document.getElementById(c.id);n&&Te(n,!1)},children:c.text})},c.id);return p("div",{flex:"~ col 1",style:{width:"var(--shaco-aside-width)"},children:p("div",{children:i&&_("div",{id:"aside-container",className:"relative divider-left pl-4 text-13px font-medium",children:[p("div",{id:"aside-marker",className:"absolute top-33px opacity-0 w-1px h-18px bg-brand",style:{left:"-1px",transition:"top 0.25s cubic-bezier(0, 1, 0.5, 1), background-color 0.5s, opacity 0.25s"}}),p("div",{"leading-7":"~",text:"13px",font:"semibold",children:"ON THIS PAGE"}),p("nav",{children:p("ul",{relative:"~",children:r.map(l)})})]})})})}window.ISLANDS={Aside:Se};window.ISLAND_PROPS=JSON.parse(document.getElementById("island-props").textContent);
 </script>
-          <script type="module" src="/assets/client-entry-e8d10eb9.js"></script>
-          <script id="island-props">[{}]</script>
-        </body>
-      </html>
+  <script type="module" src="/shaco/build/assets/client-entry-e8d10eb9.js"></script>
+  <script id="island-props">
+    [{}]
+  </script>
+</body>
+
+</html>
