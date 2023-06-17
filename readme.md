@@ -2,6 +2,8 @@
 
 [![](https://img.shields.io/bundlephobia/min/shaco-ssg)](https://www.npmjs.com/package/shaco-ssg)
 [![](https://img.shields.io/npm/dm/shaco-ssg)](https://www.npmjs.com/package/shaco-ssg)
+
+
 A static site generator(Base on Vite)
 
 ### Usage
