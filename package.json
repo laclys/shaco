@@ -1,6 +1,6 @@
 {
   "name": "shaco",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vite SSG framework based on islands arch",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -26,7 +26,10 @@
       "eslint --fix"
     ]
   },
-  "keywords": ["vite", "ssg"],
+  "keywords": [
+    "vite",
+    "ssg"
+  ],
   "author": "Lac",
   "license": "MIT",
   "files": [
