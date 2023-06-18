@@ -66,12 +66,13 @@ ref: `/docs` dir  (use `theme-default`)
 [Show Case](https://laclys.github.io/shaco/build/)
 
 ![](demo.jpg)
+![](demo2.jpg)
 
 ### Dev
 
 ```bash
 pnpm i
-
+# link to local
 npm link
 
 # compiler
