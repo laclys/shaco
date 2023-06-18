@@ -5,7 +5,6 @@ let links: HTMLAnchorElement[] = []
 const NAV_HEIGHT = 56
 
 export function scrollToTarget(target: HTMLElement, isSmooth: boolean) {
-  console.log('123')
   const targetPadding = parseInt(window.getComputedStyle(target).paddingTop, 10)
   const targetTop =
     window.scrollY +

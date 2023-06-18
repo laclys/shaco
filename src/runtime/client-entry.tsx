@@ -14,7 +14,7 @@ declare global {
 }
 
 async function renderInBrowser() {
-  console.log('siteData', siteData)
+  // console.log('siteData', siteData)
   const containerEl = document.getElementById('root')
   if (!containerEl) {
     throw new Error('#root element not found')
