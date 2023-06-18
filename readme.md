@@ -20,6 +20,7 @@ shaco build [dir]
 ```
 
 #### For Example
+
 `shaco build docs`
 Dir config : `docs/config.ts`
 
@@ -57,16 +58,18 @@ export default defineConfig({
   }
 })
 ```
+
 homePage content: `docs/index.mdx`
 
 page conent: `docs/guide/index.mdx` / `docs/guide/b.tsx` ···(can use .jsx/.tsx/.md/.mdx)
 
-ref: `/docs` dir  (use `theme-default`)
+ref: `/docs` dir (use `theme-default`)
 
 [Show Case](https://laclys.github.io/shaco/build/)
 
 ![](demo.jpg)
-![](demo2.jpg)
+
+![](demo2.png)
 
 ### Dev
 
@@ -109,6 +112,10 @@ release flow
 
 ![](release-flow.png)
 
-### MIT
+### License
+
+MIT
+
+[Changelog](./CHANGELOG.md)
 
 Have fun!
