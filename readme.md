@@ -3,7 +3,6 @@
 [![](https://img.shields.io/bundlephobia/min/shaco-ssg)](https://www.npmjs.com/package/shaco-ssg)
 [![](https://img.shields.io/npm/dm/shaco-ssg)](https://www.npmjs.com/package/shaco-ssg)
 
-
 A static site generator(Base on Vite)
 
 ### Usage
@@ -12,12 +11,61 @@ A static site generator(Base on Vite)
 # install
 pnpm i shaco-ssg
 
+# cli
 shaco dev [dir]
 ## preview
 shaco preview [dir]
 ## build
 shaco build [dir]
 ```
+
+#### For Example
+`shaco build docs`
+Dir config : `docs/config.ts`
+
+```typescript
+import { defineConfig } from '../dist'
+
+export default defineConfig({
+  title: 'xxx',
+  themeConfig: {
+    nav: [
+      { text: 'Index', link: '/' },
+      { text: 'Introduction', link: '/guide/' }
+    ],
+    sidebar: {
+      '/guide/': [
+        {
+          text: 'Introduction',
+          items: [
+            {
+              text: 'Touma Kamijou',
+              link: '/guide/a'
+            },
+            {
+              text: 'Uiharu Kazari',
+              link: '/guide/b'
+            },
+            {
+              text: 'Misaka Imouto',
+              link: '/guide/c'
+            }
+          ]
+        }
+      ]
+    }
+  }
+})
+```
+homePage content: `docs/index.mdx`
+
+page conent: `docs/guide/index.mdx` / `docs/guide/b.tsx` ···(can use .jsx/.tsx/.md/.mdx)
+
+ref: `/docs` dir  (use `theme-default`)
+
+[Show Case](https://laclys.github.io/shaco/build/)
+
+![](demo.jpg)
 
 ### Dev
 
@@ -46,8 +94,6 @@ shaco preview [dir]
 shaco build [dir]
 
 ```
-
-![](demo.jpg)
 
 ---
 
